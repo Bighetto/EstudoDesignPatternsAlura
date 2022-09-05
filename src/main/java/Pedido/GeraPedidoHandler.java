@@ -1,6 +1,7 @@
 package Pedido;
 
 
+import Orcamento.ItemOrcamento;
 import Orcamento.Orcamento;
 import Pedido.acao.AcaoAposGerarPedido;
 
@@ -18,7 +19,9 @@ public class GeraPedidoHandler {
     }
 
     public void executa(GeraPedido dados){
-        Orcamento orcamento = new Orcamento(dados.getValorOrcamento(), dados.getQuantidadeItens());
+
+        Orcamento orcamento = new Orcamento();
+        orcamento.adicionarItem(new ItemOrcamento(dados.getValorOrcamento()));
 
         Pedido pedido = new Pedido(dados.getCliente(), LocalDateTime.now(), orcamento);
 

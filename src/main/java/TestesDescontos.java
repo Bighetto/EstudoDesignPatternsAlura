@@ -1,5 +1,6 @@
 import Calculadora.CalculadoraDesconto;
 import Orcamento.Orcamento;
+import Orcamento.ItemOrcamento;
 
 import java.math.BigDecimal;
 
@@ -7,8 +8,11 @@ public class TestesDescontos {
 
     public static void main(String[] args) {
 
-        Orcamento orcamento1 = new Orcamento(new BigDecimal(200), 6);
-        Orcamento orcamento2 = new Orcamento(new BigDecimal(500), 10);
+
+        Orcamento orcamento1 = new Orcamento();
+        orcamento1.adicionarItem(new ItemOrcamento(new BigDecimal(500)));
+        Orcamento orcamento2 = new Orcamento();
+        orcamento2.adicionarItem(new ItemOrcamento(new BigDecimal(200)));
 
         CalculadoraDesconto calculadora = new CalculadoraDesconto();
 

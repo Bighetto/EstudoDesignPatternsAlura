@@ -1,7 +1,8 @@
-import Pedido.EnviarEmailPedido;
+import Pedido.acao.EnviarEmailPedido;
 import Pedido.GeraPedido;
 import Pedido.GeraPedidoHandler;
-import Pedido.SalvarNoBancoPedido;
+import Pedido.acao.LogDePedido;
+import Pedido.acao.SalvarNoBancoPedido;
 
 import java.math.BigDecimal;
 import java.util.Arrays;
@@ -15,7 +16,10 @@ public class TestesPedidos {
         Integer quantidadeItens = Integer.parseInt("2");
 
         GeraPedido gerador = new GeraPedido(cliente, valorOrcamento, quantidadeItens);
-        GeraPedidoHandler handler = new GeraPedidoHandler(Arrays.asList(new SalvarNoBancoPedido(), new EnviarEmailPedido()));
+        GeraPedidoHandler handler = new GeraPedidoHandler(Arrays.asList(new SalvarNoBancoPedido(),
+                new EnviarEmailPedido(),
+                new LogDePedido()));
+
         handler.executa(gerador);
 
     }

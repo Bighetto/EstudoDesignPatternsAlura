@@ -1,6 +1,6 @@
-package Pedido;
+package Pedido.acao;
 
-import Pedido.acao.AcaoAposGerarPedido;
+import Pedido.Pedido;
 
 public class SalvarNoBancoPedido implements AcaoAposGerarPedido {
 

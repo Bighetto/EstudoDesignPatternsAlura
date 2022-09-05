@@ -1,5 +1,6 @@
-package Pedido;
+package Pedido.acao;
 
+import Pedido.Pedido;
 import Pedido.acao.AcaoAposGerarPedido;
 
 public class EnviarEmailPedido implements AcaoAposGerarPedido {
